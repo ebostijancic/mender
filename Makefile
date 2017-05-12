@@ -33,6 +33,9 @@ ifneq ($(TAGS),)
 BUILDTAGS = -tags '$(TAGS)'
 endif
 
+get-deps:
+	$(GO) get -d -t
+
 build:
 	$(GO) build $(GO_LDFLAGS) $(BUILDV) $(BUILDTAGS)
 
